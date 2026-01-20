@@ -256,7 +256,7 @@ function App() {
              </div>
              <div className="flex flex-col leading-none">
                <h1 className="font-bold text-2xl text-white tracking-tight mb-1.5">Autonamer</h1>
-               <p className="text-[#ffff99] text-[10px] font-bold uppercase tracking-[0.25em]">MKT Team V1</p>
+               <p className="text-[#ffff99] text-[10px] font-bold uppercase tracking-[0.25em]">MKT Team V1.2</p>
              </div>
           </div>
         </div>
