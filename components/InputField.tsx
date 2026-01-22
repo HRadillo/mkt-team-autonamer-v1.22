@@ -65,7 +65,7 @@ export const DataListField: React.FC<DataListFieldProps> = ({ label, value, onCh
         </div>
       </div>
       <datalist id={id}>
-        {filteredOptions.map((opt) => (
+        {sortedOptions.map((opt) => (
           <option key={opt} value={opt} />
         ))}
       </datalist>
