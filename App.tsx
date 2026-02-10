@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { FormData, AppMode, WorkLevel, GeneratedOutputs } from './types';
 import { generateVideoOutputs, generateStaticOutputs } from './utils';
-import { INTRO_THEME, HOOK_THEME, AUDIO, VIDEO_CONCEPT_THEME, STATIC_CONCEPT_THEME, CONCEPT_CLUSTER } from './lexiconData';
+import { LexiconItem, INTRO_THEME, HOOK_THEME, AUDIO, VIDEO_CONCEPT_THEME, STATIC_CONCEPT_THEME, CONCEPT_CLUSTER } from './lexiconData';
 import { InputField, CheckboxField, SelectField, MultiSelectField, DataListField } from './components/InputField';
 import { CopyRow } from './components/CopyRow';
 
