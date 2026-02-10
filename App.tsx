@@ -24,8 +24,8 @@ const FOCUS_OPTIONS = [
 // --- CONTEXT-AWARE OPTIONS ---
 
 // Theme
-const VIDEO_THEME_OPTIONS = ['AES', 'CEL', 'DTC', 'EDUC', 'INT', 'MIX', 'NARR', 'POD', 'VLOG'];
-const STATIC_THEME_OPTIONS = ['DSGN', 'SCRAP', 'CEL', 'MIX'];
+const VIDEO_THEME_OPTIONS = ['AES', 'CEL', 'DTC', 'EDUC', 'INT', 'MIX', 'NARR', 'POD', 'SHORT', 'VLOG'];
+const STATIC_THEME_OPTIONS = ['DSGN', 'SCRAP', 'CEL', 'MIX', 'SHORT'];
 
 // Age
 const VIDEO_AGE_OPTIONS = ['TEEN', 'CORE', 'MID', 'MAT'];
