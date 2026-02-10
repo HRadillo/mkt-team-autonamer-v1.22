@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { FormData, AppMode, WorkLevel, GeneratedOutputs } from './types';
 import { generateVideoOutputs, generateStaticOutputs } from './utils';
+import { INTRO_THEME, HOOK_THEME, AUDIO, VIDEO_CONCEPT_THEME, STATIC_CONCEPT_THEME, CONCEPT_CLUSTER } from './lexiconData';
 import { InputField, CheckboxField, SelectField, MultiSelectField, DataListField } from './components/InputField';
 import { CopyRow } from './components/CopyRow';
 
@@ -264,7 +265,7 @@ function App() {
              </div>
              <div className="flex flex-col leading-none">
                <h1 className="font-bold text-2xl text-white tracking-tight mb-1.5">Autonamer</h1>
-               <p className="text-[#ffff99] text-[10px] font-bold uppercase tracking-[0.25em]">MKT Team V1.21</p>
+               <p className="text-[#ffff99] text-[10px] font-bold uppercase tracking-[0.25em]">MKT Team V1.22</p>
              </div>
           </div>
         </div>
@@ -668,76 +669,124 @@ function App() {
               </div>
 
               <div className="p-10 overflow-y-auto space-y-12 custom-scrollbar bg-black/50">
-                
-                {/* Product Codes & Demographics */}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   <div>
-                    <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">Product Codes</h4>
-                    <div className="grid grid-cols-2 gap-3 text-sm text-zinc-400">
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">ACN</span> <span>Acne</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">CNC</span> <span>Concealer</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">FOU</span> <span>Foundation</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">ASU</span> <span>Acne Supp</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">HYP</span> <span>Hyper-pig</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">ECZ</span> <span>Eczema</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">GSU</span> <span>Collagen</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">NEC</span> <span>Neck</span></div>
-                    </div>
+                    <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">
+                      Intro Theme
+                    </h4>
+                    <ul className="space-y-3 text-sm text-zinc-400">
+                      {INTRO_THEME.map((i) => (
+                        <li key={i.code} className="flex items-start gap-4 p-2 hover:bg-zinc-900 rounded">
+                          <strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">
+                            {i.code}
+                          </strong>
+                          <span>
+                            <span className="text-white">{i.title}</span>
+                            {i.desc ? <span className="text-zinc-500"> — {i.desc}</span> : null}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
                   <div>
-                    <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">Demographics</h4>
-                    <div className="space-y-3 text-sm text-zinc-400">
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">TEEN</span> <span>&lt; 24 Years</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">CORE</span> <span>25 - 35 Years</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">MID</span> <span>36 - 50 Years</span></div>
-                      <div className="flex justify-between p-3 bg-zinc-900/50 rounded-lg border border-zinc-800/50"><span className="text-white font-mono font-bold">MAT</span> <span>51+ Years</span></div>
-                      <div className="flex justify-between p-3 bg-[#ffff99]/10 rounded-lg border border-[#ffff99]/30"><span className="text-[#ffff99] font-mono font-bold">AG-MIX</span> <span className="text-white">Multiple (Ad Set Only)</span></div>
+                    <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">
+                      Hook Theme
+                    </h4>
+                    <ul className="space-y-3 text-sm text-zinc-400">
+                      {HOOK_THEME.map((i) => (
+                        <li key={i.code} className="flex items-start gap-4 p-2 hover:bg-zinc-900 rounded">
+                          <strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">
+                            {i.code}
+                          </strong>
+                          <span>
+                            <span className="text-white">{i.title}</span>
+                            {i.desc ? <span className="text-zinc-500"> — {i.desc}</span> : null}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div>
+                    <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">
+                      Audio
+                    </h4>
+                    <ul className="space-y-3 text-sm text-zinc-400">
+                      {AUDIO.map((i) => (
+                        <li key={i.code} className="flex items-start gap-4 p-2 hover:bg-zinc-900 rounded">
+                          <strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">
+                            {i.code}
+                          </strong>
+                          <span>
+                            <span className="text-white">{i.title}</span>
+                            {i.desc ? <span className="text-zinc-500"> — {i.desc}</span> : null}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">
+                      Video Concept Theme
+                    </h4>
+                    <ul className="space-y-3 text-sm text-zinc-400">
+                      {VIDEO_CONCEPT_THEME.map((i) => (
+                        <li key={i.code} className="flex items-start gap-4 p-2 hover:bg-zinc-900 rounded">
+                          <strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">
+                            {i.code}
+                          </strong>
+                          <span>
+                            <span className="text-white">{i.title}</span>
+                            {i.desc ? <span className="text-zinc-500"> — {i.desc}</span> : null}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-10">
+                      <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">
+                        Static Concept Theme
+                      </h4>
+                      <ul className="space-y-3 text-sm text-zinc-400">
+                        {STATIC_CONCEPT_THEME.map((i) => (
+                          <li key={i.code} className="flex items-start gap-4 p-2 hover:bg-zinc-900 rounded">
+                            <strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">
+                              {i.code}
+                            </strong>
+                            <span>
+                              <span className="text-white">{i.title}</span>
+                              {i.desc ? <span className="text-zinc-500"> — {i.desc}</span> : null}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
 
-                {/* Themes & Visuals */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                   <div>
-                    <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">Intro Themes</h4>
-                    <ul className="space-y-3 text-sm text-zinc-400">
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">AI</strong> <span>AI-Generated</span></li>
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">UGC</strong> <span>User Generated (Selfie)</span></li>
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">PH</strong> <span>Product Hero (Pack/Texture)</span></li>
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">AUTH</strong> <span>Authority (Doctor/Derm)</span></li>
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">APPLY</strong> <span>Application Moment</span></li>
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">STUD</strong> <span>Studio / High-end</span></li>
-                    </ul>
-                   </div>
-                   
-                   <div>
-                    <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">Graphic Styles (GRX)</h4>
-                    <ul className="space-y-3 text-sm text-zinc-400">
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">GRX1</strong> <span>Brand Style</span></li>
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">GRX2</strong> <span>Native White Box</span></li>
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">GRX3</strong> <span>Native Black Stroke</span></li>
-                      <li className="flex items-center gap-4 p-2 hover:bg-zinc-900 rounded"><strong className="text-white font-mono w-16 shrink-0 bg-zinc-800 text-center rounded py-1">GRX4</strong> <span>Native Minimalistic</span></li>
-                    </ul>
-                   </div>
-                </div>
-
-                {/* Concepts */}
                 <div>
-                   <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">Concept Clusters</h4>
-                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-zinc-400">
-                      <div className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"><span className="text-[#ffff99] font-bold block mb-1 font-mono">ADLT</span> Adult</div>
-                      <div className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"><span className="text-[#ffff99] font-bold block mb-1 font-mono">COMP</span> Comparison</div>
-                      <div className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"><span className="text-[#ffff99] font-bold block mb-1 font-mono">CONG</span> Congestion</div>
-                      <div className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"><span className="text-[#ffff99] font-bold block mb-1 font-mono">CVRG</span> Coverage</div>
-                      <div className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"><span className="text-[#ffff99] font-bold block mb-1 font-mono">EMTN</span> Emotion</div>
-                      <div className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"><span className="text-[#ffff99] font-bold block mb-1 font-mono">FRML</span> Formula</div>
-                      <div className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"><span className="text-[#ffff99] font-bold block mb-1 font-mono">PERS</span> Personalization</div>
-                      <div className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"><span className="text-[#ffff99] font-bold block mb-1 font-mono">RTN</span> Routine</div>
-                   </div>
-                </div>
+                  <h4 className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-zinc-800 pb-3">
+                    Concept Cluster
+                  </h4>
 
-              </div>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-zinc-400">
+                    {CONCEPT_CLUSTER.map((c) => (
+                      <div
+                        key={c.code}
+                        className="p-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"
+                      >
+                        <span className="text-[#ffff99] font-bold block mb-1 font-mono">{c.code}</span>
+                        {c.title}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+</div>
            </div>
         </div>
       )}
