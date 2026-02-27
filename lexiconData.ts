@@ -54,21 +54,17 @@ export const AUDIO: LexiconItem[] = [
 ];
 
 export const VIDEO_CONCEPT_THEME: LexiconItem[] = [
-  { code: 'DTC', title: 'Direct-to-camera', desc: 'Talent speaks directly to the audience.' },
-  { code: 'INT', title: 'Interview', desc: 'Interviews in public or on the street.' },
-  { code: 'POD', title: 'Podcast', desc: 'Shot styled like a podcast setup.' },
-  { code: 'AES', title: 'Aesthetic', desc: 'Visually pleasing, calm, stylized editing.' },
-  { code: 'VLOG', title: 'Vlog', desc: '“Day in the life”, “GRWM”.' },
-  { code: 'NARR', title: 'Narration', desc: 'Full VO throughout the video.' },
-  { code: 'CEL', title: 'Celebrity' },
-  { code: 'SHORT', title: 'Short', desc: 'Short-form cutdown / quick concept.' },
+  { code: 'BRAND', title: 'Brand', desc: 'Brand-forward concept focused on identity, positioning, or polished brand storytelling.' },
+  { code: 'VIRAL', title: 'Viral', desc: 'Concept built to feel highly shareable, trend-aware, or thumb-stopping.' },
+  { code: 'PERF', title: 'Performance', desc: 'Conversion-oriented concept designed to drive measurable marketing results.' },
+  { code: 'TSTMN', title: 'Testimonial', desc: 'Concept led by a personal endorsement, review, or experience-based proof.' },
 ];
 
 export const STATIC_CONCEPT_THEME: LexiconItem[] = [
-  { code: 'CEL', title: 'Celebrity' },
-  { code: 'SCRAP', title: 'Scrappy' },
-  { code: 'DSGN', title: 'Design-led' },
-  { code: 'SHORT', title: 'Short', desc: 'Short-form / quick concept.' },
+  { code: 'BRAND', title: 'Brand', desc: 'Brand-forward concept focused on identity, positioning, or polished brand storytelling.' },
+  { code: 'VIRAL', title: 'Viral', desc: 'Concept built to feel highly shareable, trend-aware, or thumb-stopping.' },
+  { code: 'PERF', title: 'Performance', desc: 'Conversion-oriented concept designed to drive measurable marketing results.' },
+  { code: 'TSTMN', title: 'Testimonial', desc: 'Concept led by a personal endorsement, review, or experience-based proof.' },
 ];
 
 export const CONCEPT_CLUSTER: LexiconItem[] = [
@@ -96,7 +92,6 @@ export const CONCEPT_CLUSTER: LexiconItem[] = [
   { code: 'SHD', title: 'Shade' },
   { code: 'SKNC', title: 'Skincare' },
   { code: 'SUND', title: 'Sun-damage' },
-  { code: 'TSTMN', title: 'Testimonial' },
   { code: 'TXTR', title: 'Texture' },
   { code: 'UNCMPL', title: 'Uncomplicated' },
   { code: 'WRNKL', title: 'Wrinkles' },
