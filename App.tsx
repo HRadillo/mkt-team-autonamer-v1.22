@@ -19,14 +19,14 @@ const TRIAL_OPTIONS = ['TRIAL', 'BUY', 'TBYB'];
 const FOCUS_OPTIONS = [
   'ADLT', 'COMP', 'CONG', 'CONV', 'CVRG', 'CYST', 'DGST', 'EFCY', 'EMTN', 'FRML', 'HAIR', 'HRMN', 
   'INFL', 'MATR', 'MLSM', 'OFFR', 'PERS', 'PGMT', 'PIH', 'PRNT', 'PRVTN', 'RTN', 'SAG', 'SHD', 
-  'SKNC', 'SUND', 'TSTMN', 'TXTR', 'UNCMPL', 'WRNKL'
+  'SKNC', 'SUND', 'TXTR', 'UNCMPL', 'WRNKL'
 ].sort();
 
 // --- CONTEXT-AWARE OPTIONS ---
 
 // Theme
-const VIDEO_THEME_OPTIONS = ['AES', 'CEL', 'DTC', 'EDUC', 'INT', 'MIX', 'NARR', 'POD', 'SHORT', 'VLOG'];
-const STATIC_THEME_OPTIONS = ['DSGN', 'SCRAP', 'CEL', 'MIX', 'SHORT'];
+const VIDEO_THEME_OPTIONS = ['BRAND', 'VIRAL', 'PERF', 'TSTMN'];
+const STATIC_THEME_OPTIONS = ['BRAND', 'VIRAL', 'PERF', 'TSTMN'];
 
 // Age
 const VIDEO_AGE_OPTIONS = ['TEEN', 'CORE', 'MID', 'MAT'];
@@ -283,7 +283,7 @@ function App() {
              </div>
              <div className="flex flex-col leading-none">
                <h1 className="font-bold text-2xl text-white tracking-tight mb-1.5">Autonamer</h1>
-               <p className="text-[#ffff99] text-[10px] font-bold uppercase tracking-[0.25em]">MKT Team V1.22</p>
+               <p className="text-[#ffff99] text-[10px] font-bold uppercase tracking-[0.25em]">MKT Team V1.23</p>
              </div>
           </div>
         </div>
