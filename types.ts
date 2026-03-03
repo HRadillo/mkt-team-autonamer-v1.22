@@ -23,7 +23,6 @@ export interface FormData {
   age: string;
   ethnicity: string;
   ratio: string;
-  style: string;
   graphic: string;
   sound: string; // Video Only
 
