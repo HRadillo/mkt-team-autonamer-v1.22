@@ -456,7 +456,7 @@ function App() {
                        <SelectField label="Ratio" value={formData.ratio} onChange={(v) => updateField('ratio', v)} options={getRatioOptions()} />
                     </div>
                     <div className="grid grid-cols-3 gap-6">
-                       <SelectField label="Style" value={formData.style} onChange={(v) => updateField('style', v)} options={getStyleOptions()} />
+                        value={formData.style} onChange={(v) => updateField('style', v)} options={getStyleOptions()} />
                        <SelectField label="Graphic" value={formData.graphic} onChange={(v) => updateField('graphic', v)} options={getGraphicOptions()} />
                        {(mode === 'video' && workLevel === 'ad-level') && (
                          <SelectField label="Sound" value={formData.sound} onChange={(v) => updateField('sound', v)} options={SOUND_OPTIONS} />
