@@ -63,7 +63,6 @@ export const generateVideoOutputs = (data: FormData): GeneratedOutputs => {
     data.age,
     data.ethnicity,
     data.ratio,
-    data.style,
     data.graphic,
     data.productCode,
     data.projectCode,
@@ -111,7 +110,6 @@ export const generateVideoOutputs = (data: FormData): GeneratedOutputs => {
     data.age,
     data.ethnicity,
     data.ratio,
-    data.style,
     data.graphic,
     data.productCode,
     projectCodeVariant,
@@ -152,10 +150,9 @@ export const generateStaticOutputs = (data: FormData): GeneratedOutputs => {
     ageStr,                // S
     data.ethnicity,        // T
     data.ratio,            // U
-    data.style,            // V
-    data.graphic,          // W
-    data.productCode,      // X
-    data.projectCode,      // Y
+    data.graphic,          // V
+    data.productCode,      // W
+    data.projectCode,      // X
     '',                    // Z
   ], cleanAdSetStatic);
 
@@ -200,7 +197,6 @@ export const generateStaticOutputs = (data: FormData): GeneratedOutputs => {
     ageStr,
     data.ethnicity,
     data.ratio,
-    data.style,
     data.graphic,
     data.productCode,
     projectCodeVariant,
