@@ -45,7 +45,6 @@ const HOOK_THEME_OPTIONS = ['POS', 'NEG', 'STAT', 'COMP', 'RSN', 'FUN', 'QST', '
 const VISUAL_THEME_OPTIONS_BASE = ['AI', 'UGC', 'PH', 'AUTH', 'APPLY', 'STUD', 'TXT', 'SPLT', 'BEF', 'BA', 'AFT', 'BROLL', 'LAB', 'TS', 'UI', 'CHT', 'MEME', 'UVT', 'INT', 'POD', 'SMD', 'TXTR', 'GS'];
 const VISUAL_THEME_OPTIONS_STATIC = [...VISUAL_THEME_OPTIONS_BASE, 'PRE'].sort();
 
-const STYLE_OPTIONS = ['native', 'brand'];
 const SOUND_OPTIONS = ['SPE', 'VO', 'TRND', 'ASMR', 'FX'];
 const ETHNICITY_OPTIONS = ['LTONE', 'DTONE', 'TTONE'];
 const PRODUCT_CODE_OPTIONS = ['ACF', 'ACN', 'ASU', 'BPK', 'CNC', 'CSU', 'ECZ', 'FOU', 'HYP', 'NEC', 'TIT', 'TWL'];
@@ -72,7 +71,6 @@ const INITIAL_VIDEO_STATE: FormData = {
   age: '',
   ethnicity: '',
   ratio: '9x16',
-  style: '',
   graphic: '',
   sound: '',
   productCode: 'ACF',
@@ -154,7 +152,6 @@ function App() {
     if (workLevel === 'ad-level') {
       const clears: Partial<FormData> = {};
       
-      if (formData.style === 'MIX') clears.style = '';
       if (formData.graphic === 'MIX') clears.graphic = '';
       if (formData.age === 'AG-MIX') clears.age = '';
       if (formData.ratio === 'MIX') clears.ratio = '';
@@ -163,7 +160,7 @@ function App() {
         setCurrentData(prev => ({ ...prev, ...clears }));
       }
     }
-  }, [workLevel, mode, formData.style, formData.graphic, formData.age, formData.ratio]);
+  }, [workLevel, mode, formData.graphic, formData.age, formData.ratio]);
 
 
   const setCurrentData = (updater: (prev: FormData) => FormData) => {
@@ -245,9 +242,6 @@ function App() {
   // If we are at Ad Set Level, we allow "MIX". 
   // If we are at Ad Level, we forbid "MIX".
 
-  const getStyleOptions = () => {
-    return workLevel === 'ad-set' ? [...STYLE_OPTIONS, 'MIX'] : STYLE_OPTIONS;
-  }
 
   const getGraphicOptions = () => {
     const base = mode === 'video' ? VIDEO_GRAPHIC_OPTIONS : STATIC_GRAPHIC_OPTIONS;
