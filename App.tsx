@@ -19,7 +19,7 @@ const TRIAL_OPTIONS = ['TRIAL', 'BUY', 'TBYB'];
 const FOCUS_OPTIONS = [
   'ADLT', 'COMP', 'CONG', 'CONV', 'CVRG', 'CYST', 'DGST', 'EFCY', 'EMTN', 'FRML', 'HAIR', 'HRMN', 
   'INFL', 'MATR', 'MLSM', 'OFFR', 'PERS', 'PGMT', 'PIH', 'PRNT', 'PRVTN', 'RTN', 'SAG', 'SHD', 
-  'SKNC', 'SUND', 'TXTR', 'UNCMPL', 'WRNKL'
+  'SKNC', 'SUND', 'TRANSF', 'TXTR', 'UNCMPL', 'USG', 'WRNKL'
 ].sort();
 
 // --- CONTEXT-AWARE OPTIONS ---
@@ -151,7 +151,6 @@ function App() {
   useEffect(() => {
     if (workLevel === 'ad-level') {
       const clears: Partial<FormData> = {};
-      
       if (formData.graphic === 'MIX') clears.graphic = '';
       if (formData.age === 'AG-MIX') clears.age = '';
       if (formData.ratio === 'MIX') clears.ratio = '';
@@ -241,8 +240,6 @@ function App() {
   // --- HELPER: CONTEXT AWARE OPTIONS ---
   // If we are at Ad Set Level, we allow "MIX". 
   // If we are at Ad Level, we forbid "MIX".
-
-
   const getGraphicOptions = () => {
     const base = mode === 'video' ? VIDEO_GRAPHIC_OPTIONS : STATIC_GRAPHIC_OPTIONS;
     return workLevel === 'ad-set' ? [...base, 'MIX'] : base;
@@ -455,8 +452,7 @@ function App() {
                        <SelectField label="Ethnicity" value={formData.ethnicity} onChange={(v) => updateField('ethnicity', v)} options={ETHNICITY_OPTIONS} />
                        <SelectField label="Ratio" value={formData.ratio} onChange={(v) => updateField('ratio', v)} options={getRatioOptions()} />
                     </div>
-                    <div className="grid grid-cols-3 gap-6">
-                        value={formData.style} onChange={(v) => updateField('style', v)} options={getStyleOptions()} />
+                    <div className={`grid gap-6 ${mode === 'video' && workLevel === 'ad-level' ? 'grid-cols-2' : 'grid-cols-1'}`}>
                        <SelectField label="Graphic" value={formData.graphic} onChange={(v) => updateField('graphic', v)} options={getGraphicOptions()} />
                        {(mode === 'video' && workLevel === 'ad-level') && (
                          <SelectField label="Sound" value={formData.sound} onChange={(v) => updateField('sound', v)} options={SOUND_OPTIONS} />
